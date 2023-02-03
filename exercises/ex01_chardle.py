@@ -39,4 +39,7 @@ if five_character_word[4] == single_character:
 if amount_of_matching_characters == 0:
     print("No instances of " + single_character + " found in " + five_character_word)
 else:
-    print(str(amount_of_matching_characters) + " instances of " + single_character + " found in " + five_character_word)
+    if amount_of_matching_characters == 1:
+        print(str(1) + " instance of " + single_character + " found in " + five_character_word)
+    else:
+        print(str(amount_of_matching_characters) + " instances of " + single_character + " found in " + five_character_word)
