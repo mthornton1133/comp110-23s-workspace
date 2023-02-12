@@ -1,6 +1,6 @@
 """EX02 - One Shot Wordle - a one chance wordle game."""
 
-__author__= 730546472
+__author__ = "730546472"
 
 SECRETWORD: str = "python"
 guess: str = input(f"What is your {len(SECRETWORD)}-letter guess? ")
@@ -22,11 +22,11 @@ while i < len(SECRETWORD):
     if guess[i] == SECRETWORD[i]:
         emoji_result = emoji_result + GREEN_BOX
     else:
-        while alt_idx_of_secret < len(SECRETWORD) and guessed_charcater == False:
+        while alt_idx_of_secret < len(SECRETWORD) and not guessed_charcater:
             if SECRETWORD[alt_idx_of_secret] == guess[i]:
                 guessed_charcater = True
             alt_idx_of_secret = alt_idx_of_secret + 1
-        if guessed_charcater == True:
+        if guessed_charcater:
             emoji_result = emoji_result + YELLOW_BOX
         else:
             emoji_result = emoji_result + WHITE_BOX
@@ -38,4 +38,3 @@ if guess == SECRETWORD:
     print("Woo! You got it!")
 else:
     print("Not quite. Play again soon!")
-
