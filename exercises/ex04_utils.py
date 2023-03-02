@@ -4,13 +4,13 @@ __author__ = "730546472"
 
 
 def all(multi_numbers: list[int], single_number: int) -> bool:
-    """fn stating whether or not the list is comprised of all the same numbers."""
+    """Fn stating whether or not the list is comprised of all the same numbers."""
     i: int = 0
     alt_i: int = 0
+    if len(multi_numbers) == 0:
+        return False
     while i < len(multi_numbers):
-        if len(multi_numbers) == 0:
-            return False
-        elif single_number != multi_numbers[0]:
+        if single_number != multi_numbers[0]:
             return False
         else:
             while alt_i < len(multi_numbers):
@@ -23,7 +23,7 @@ def all(multi_numbers: list[int], single_number: int) -> bool:
 
 
 def max(input: list[int]) -> int:
-    """fn that gives the maximum value out of a list of ints."""
+    """Fn that gives the maximum value out of a list of ints."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     i: int = 0
@@ -37,7 +37,7 @@ def max(input: list[int]) -> int:
 
 
 def is_equal(numbers1: list[int], numbers2: list[int]) -> bool:
-    """fn that states whether or not the lists are identical."""
+    """Fn that states whether or not the lists are identical."""
     i: int = 0
     if len(numbers1) != len(numbers2):
         return False
