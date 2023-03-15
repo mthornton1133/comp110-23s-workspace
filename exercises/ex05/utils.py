@@ -2,16 +2,13 @@
 
 __author__ = "730546472"
 
+
 def only_evens(numbers: list[int]) -> list[int]:
     """Fn that only returns even numbers."""
-    i: int = 0
     even_nums: list[int] = []
-    while i < len(numbers):
-        if numbers[i] % 2 == 0:
-            even_nums.append(numbers[i])
-            i += 1
-        else:
-            i += 1
+    for values in numbers:
+        if values % 2 == 0:
+            even_nums.append(values)
     return even_nums
 
 

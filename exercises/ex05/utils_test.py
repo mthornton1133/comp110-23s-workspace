@@ -81,7 +81,7 @@ def test_if_list_has_many_values() -> None:
 
 
 def test_if_list_has_values_but_first_idx_is_negative() -> None:
-    """Tests to see if the list has many values but the first index is negative"""
+    """Tests to see if the list has many values but the first index is negative."""
     list_of_ints: list[int] = [1, 42, 67, 99]
     first_idx: int = -10
     second_idx: int = 3
