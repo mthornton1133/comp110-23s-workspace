@@ -12,10 +12,10 @@ def main() -> None:
     global points
     global player
     greet()
-    #Enter into experience.
+    # Enter into experience.
     print(f"Well {player}, now that you have been accepted into Hogwarts School of Witchcraft and Wizardry, it is time for you to get sorted into your house.")
     i: int = 0
-    #This is the loop that allows player to choose other options.
+    # This is the loop that allows player to choose other options.
     while i < 4:
         choice: str = input(f"You now have the ability to choose in what order you want to prodeed. This statement will be repeated after each test. 1) Take the character test. 2) Takle the physical test. 3) Answer a series of imformative questions. 4) Just do not play {FROWN_FACE}. Note you can choose the same test up to 4 times but this will greatly impact where you are placed. Also quitting before completion of other 3 tests will impact you placement. It is recommended you quit as the fourth choice. Say 1, 2, 3, or 4 to choose: ")
         while choice != "1" and choice != "2" and choice != "3" and choice != "4":
@@ -77,15 +77,18 @@ def main() -> None:
         if choice == "4":
             farewell()
         i += 1
+    farewell()
 
 
 def greet() -> None:
+    """This fn greets the player and asks for his or her name."""
     global player
     player = input("What is your name: ")
     print(f"Greetings {player}, this adventure will determine what harry potter house you belongs to out of: Gryffindor, Ravenclaw, Hufflepuff, and Slytherin. These houses may be a bit different to the ones you know.")
 
 
 def intital_character_test() -> int:
+    """This fn makes a character test that further sorts the player."""
     global points
     global player
     print(f"Currently you total amount of points are {points}.")
@@ -109,6 +112,7 @@ def intital_character_test() -> int:
         print("Hmmm okay")
         points += 0
         return points
+    return 0
 
 
 def physical_test(current_state: int) -> int:
@@ -136,6 +140,7 @@ def physical_test(current_state: int) -> int:
         print(f"{player}, you will be fighting a dragon.")
         points_accumulated += dragon_fight()
         return points_accumulated
+    return 0
     
 
 def gorilla_fight() -> int:
@@ -262,7 +267,6 @@ def dragon_fight() -> int:
     return points_total
         
 
-
 def farewell() -> None:
     """This will serve as the goodbye function."""
     global player
@@ -278,6 +282,7 @@ def farewell() -> None:
     if points > 39:
         print(f"Well {player} you have been placed into Gryffindor. You are brave, daring, and possibly the main character.")
     quit()
+
 
 if __name__ == "__main__":
     main()
