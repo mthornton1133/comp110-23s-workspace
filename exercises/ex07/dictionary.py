@@ -7,6 +7,8 @@ def invert(inp_dict: dict[str, str]) -> dict[str, str]:
     """This fn inverts the keys to values and value to keys."""
     new_dict: dict[str, str] = dict()
     for elem in inp_dict:
+        if inp_dict[elem] in new_dict:
+            raise KeyError("Key Error.")
         new_dict[inp_dict[elem]] = elem
     return new_dict
 
